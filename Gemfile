@@ -36,6 +36,7 @@ gem 'kaminari'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-group :development do
+group :development, :test do
   gem 'faker'
+  gem 'dotenv-rails'
 end

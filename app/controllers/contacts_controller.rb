@@ -31,7 +31,7 @@ class ContactsController < ApplicationController
     @contact = Contact.new(contact_params)
 
     if @contact.save
-      redirect_to @contact, notice: 'Contact was successfully created.'
+      redirect_to contacts_path, notice: 'Contact was successfully created.'
     else
       render :new
     end
@@ -40,7 +40,7 @@ class ContactsController < ApplicationController
   # PATCH/PUT /contacts/1
   def update
     if @contact.update(contact_params)
-      redirect_to @contact, notice: 'Contact was successfully updated.'
+      redirect_to contacts_path, notice: 'Contact was successfully updated.'
     else
       render :edit
     end
