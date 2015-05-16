@@ -1,0 +1,17 @@
+default: &default
+  adapter: postgresql
+  username: food_pr
+  password:
+  encoding: unicode
+
+development:
+  <<: *default
+  database: my_contact_list_development
+
+test:
+  <<: *default
+  database: my_contact_list_test
+
+production:
+  <<: *default
+  database: my_contact_list_production

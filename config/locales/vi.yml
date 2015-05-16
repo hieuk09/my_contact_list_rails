@@ -1,0 +1,24 @@
+vi:
+  contacts:
+    name: Tên
+    telephone: Số điện thoại
+    address: Địa chỉ
+    edit: Chỉnh sửa
+    back: Quay lại
+    submit: Lưu
+    view: Xem
+    destroy: Xoá
+    destroy_confirmation: Bạn có chắc không?
+    list: Danh bạ
+    new: Thêm mới
+    new_contact: Liên lạc mới
+    edit_contact: Chỉnh sửa liên lạc
+    search: Tìm kiếm
+    search_instruction: Nhập tên hoặc số điện thoại để tìm kiếm
+    home: Trang chủ
+  views:
+    pagination:
+      first: '<<'
+      last: '>>'
+      next: '>'
+      previous: '<'

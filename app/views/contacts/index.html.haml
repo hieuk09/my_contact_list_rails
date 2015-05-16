@@ -1,0 +1,40 @@
+.contact.index
+  %h1.header= t('contacts.list')
+
+
+  = form_tag(contacts_path, method: :get, class: 'search-form form-inline') do
+    .form-group.row
+      .col-md-6
+        = search_field_tag :query, '', class: 'form-control', placeholder: t('contacts.search_instruction')
+      .col-md-2
+        = submit_tag t('contacts.search'), class: 'btn btn-primary search-btn'
+      .col-md-2
+        = link_to t('contacts.new'), new_contact_path, class: 'new-btn btn btn-success'
+      .col-md-2
+        = link_to t('contacts.home'), contacts_path, class: 'back-btn btn btn-default'
+
+  %table.table.table-hover
+    %thead
+      %tr
+        %th= t('contacts.name')
+        %th= t('contacts.address')
+        %th= t('contacts.telephone')
+        %th
+        %th
+
+    %tbody
+      - @contacts.each do |contact|
+        %tr
+          %td= contact.name
+          %td= contact.address
+          %td= contact.telephone
+          %td= link_to t('contacts.edit'), edit_contact_path(contact),
+            class: 'btn btn-primary btn-edit'
+          %td= link_to t('contacts.destroy'),
+            contact, method: :delete,
+            data: { confirm: t('contacts.destroy_confirmation') },
+            class: 'btn btn-danger btn-destroy'
+
+    = paginate @contacts
+
+  %br

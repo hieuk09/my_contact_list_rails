@@ -1,0 +1,18 @@
+= form_for @contact, html: { class: 'contact-form' } do |f|
+  - if @contact.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@contact.errors.count, "error")} prohibited this contact from being saved:"
+      %ul
+        - @contact.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field.form-group
+    = f.text_field :name, class: 'form-control', placeholder: t('contacts.name')
+  .field.form-group
+    = f.text_field :address, class: 'form-control', placeholder: t('contacts.address')
+  .field.form-group
+    = f.text_field :telephone, class: 'form-control', placeholder: t('contacts.telephone')
+  .actions
+    = f.submit 'Lưu', class: 'btn btn-success save-btn'
+    = link_to t('contacts.back'), contacts_path, class: 'btn btn-default back-btn'
+

@@ -1,0 +1,13 @@
+.pagination {
+  .page, .first, .last, .next, .prev {
+    display: inline-block;
+    border: 1px solid #2e6da4;
+    text-align: center;
+    width: 20px;
+  }
+
+  .current {
+    color: #FFF;
+    background: #337ab7;
+  }
+}

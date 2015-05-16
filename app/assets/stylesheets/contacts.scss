@@ -1,0 +1,43 @@
+// Place all the styles related to the contacts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.contact {
+  padding: 20px;
+  margin: auto;
+  width: 800px;
+
+  .header {
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  .btn:hover {
+    text-decoration: none;
+  }
+}
+
+.contact.new, .contact.edit {
+  width: 600px;
+
+  .contact-form {
+    .btn {
+      width: 100px;
+      margin-right: 10px;
+    }
+  }
+}
+
+.contact.index {
+  .search-form {
+    width: 100%;
+
+    .form-group {
+      width: 100%;
+
+      #query {
+        width: 100%;
+      }
+    }
+  }
+}
