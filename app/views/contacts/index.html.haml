@@ -13,17 +13,17 @@
       .col-md-2
         = link_to t('contacts.home'), contacts_path, class: 'back-btn btn btn-default'
 
-  %table.table.table-hover
+  %table.table.table-hover.contact-table
     %thead
       %tr
-        %th= t('contacts.name')
-        %th= t('contacts.address')
-        %th= t('contacts.telephone')
+        %th= @presenter.sortable('name')
+        %th= @presenter.sortable('address')
+        %th= @presenter.sortable('telephone')
         %th
         %th
 
     %tbody
-      - @contacts.each do |contact|
+      - @presenter.contacts.each do |contact|
         %tr
           %td= contact.name
           %td= contact.address
@@ -35,6 +35,6 @@
             data: { confirm: t('contacts.destroy_confirmation') },
             class: 'btn btn-danger btn-destroy'
 
-    = paginate @contacts
+    = paginate @presenter.contacts
 
   %br
