@@ -37,4 +37,10 @@ group :development, :test do
   gem 'faker'
   gem 'dotenv-rails'
   gem 'byebug'
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+end
+
+group :test do
+  gem 'simplecov', :require => false
 end
