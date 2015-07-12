@@ -24,6 +24,7 @@ gem 'haml-rails'
 gem 'bootstrap-sass', '~> 3.3.4'
 gem 'kaminari'
 gem 'grape'
+gem 'handlebars_assets'
 
 group :development, :test do
   gem 'faker'
