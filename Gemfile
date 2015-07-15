@@ -24,6 +24,8 @@ gem 'haml-rails'
 gem 'bootstrap-sass', '~> 3.3.4'
 gem 'kaminari'
 gem 'grape'
+gem "hashie-forbidden_attributes"
+gem 'oj'
 gem 'handlebars_assets'
 
 group :development, :test do
@@ -32,6 +34,7 @@ group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
+  gem 'airborne'
 end
 
 group :test do
