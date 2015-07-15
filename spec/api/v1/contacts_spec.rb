@@ -6,11 +6,9 @@ describe '/api/v1/contacts' do
     let(:telephone) { 'telephone' }
     let(:address) { 'address' }
     let(:params) { {
-      contact: {
-        name: name,
-        telephone: telephone,
-        address: address
-      }
+      name: name,
+      telephone: telephone,
+      address: address
     } }
     let(:result) { JSON.parse(response.body) }
 
