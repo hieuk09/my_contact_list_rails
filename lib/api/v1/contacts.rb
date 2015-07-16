@@ -19,11 +19,6 @@ module API
             error!(contact.errors.full_messages.join('. '), 400)
           end
         end
-
-        desc 'Get contact lists'
-        get do
-          Contact.all
-        end
       end
     end
   end

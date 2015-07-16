@@ -6,28 +6,8 @@ class ContactsController < ApplicationController
     @presenter = Contact::Index.new(params)
   end
 
-  # GET /contacts/1
-  def show
-  end
-
-  # GET /contacts/new
-  def new
-    @contact = Contact.new
-  end
-
   # GET /contacts/1/edit
   def edit
-  end
-
-  # POST /contacts
-  def create
-    @contact = Contact.new(contact_params)
-
-    if @contact.save
-      redirect_to contacts_path, notice: 'Contact was successfully created.'
-    else
-      render :new
-    end
   end
 
   # PATCH/PUT /contacts/1
