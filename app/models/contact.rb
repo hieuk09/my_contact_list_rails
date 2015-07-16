@@ -1,5 +1,5 @@
 class Contact < ActiveRecord::Base
-  validates :name, presence: true
+  validates :name, :telephone, presence: true
   validates :telephone, uniqueness: true
 
   paginates_per 25

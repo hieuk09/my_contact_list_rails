@@ -23,3 +23,16 @@ vi:
       next: '>'
       previous: '<'
       truncate: '...'
+  activerecord:
+    models:
+      contact: 'Danh bạ'
+    attributes:
+      contact:
+        name: 'Tên'
+        telephone: 'Số điện thoại'
+        address: 'Địa chỉ'
+    errors:
+      models:
+        contact:
+          blank: 'chưa được điền'
+          taken: 'đã tồn tại'

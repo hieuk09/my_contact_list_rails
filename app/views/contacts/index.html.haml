@@ -9,13 +9,13 @@
       .col-md-2
         = submit_tag t('contacts.search'), class: 'btn btn-primary search-btn'
       .col-md-2
-        = link_to t('contacts.new'), new_contact_path, class: 'new-btn btn btn-success'
+        .new-btn.btn.btn-success= t('contacts.new')
       .col-md-2
         = link_to t('contacts.home'), contacts_path, class: 'back-btn btn btn-default'
 
   %table.table.table-hover.contact-table
     %thead
-      %tr
+      %tr.header
         %th= @presenter.sortable('name')
         %th= @presenter.sortable('address')
         %th= @presenter.sortable('telephone')
@@ -24,17 +24,19 @@
 
     %tbody
       - @presenter.contacts.each do |contact|
-        %tr
+        %tr.contact-row
           %td= contact.name
           %td= contact.address
           %td= contact.telephone
           %td= link_to t('contacts.edit'), edit_contact_path(contact),
-            class: 'btn btn-primary btn-edit'
+            class: 'btn btn-primary edit-btn'
           %td= link_to t('contacts.destroy'),
             contact, method: :delete,
             data: { confirm: t('contacts.destroy_confirmation') },
-            class: 'btn btn-danger btn-destroy'
+            class: 'btn btn-danger destroy-btn'
 
     = paginate @presenter.contacts
 
   %br
+
+= javascript_include_tag 'contacts'
