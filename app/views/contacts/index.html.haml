@@ -29,11 +29,11 @@
           %td= contact.address
           %td= contact.telephone
           %td= link_to t('contacts.edit'), edit_contact_path(contact),
-            class: 'btn btn-primary btn-edit'
+            class: 'btn btn-primary edit-btn'
           %td= link_to t('contacts.destroy'),
             contact, method: :delete,
             data: { confirm: t('contacts.destroy_confirmation') },
-            class: 'btn btn-danger btn-destroy'
+            class: 'btn btn-danger destroy-btn'
 
     = paginate @presenter.contacts
 

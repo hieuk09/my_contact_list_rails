@@ -19,6 +19,16 @@ module API
             error!(contact.errors.full_messages.join('. '), 400)
           end
         end
+
+        desc 'Destroy contact'
+        delete ':id' do
+          contact = Contact.find(params[:id])
+          if contact.destroy
+            contact
+          else
+            error!(contact.errors.full_messages.join('. '), 400)
+          end
+        end
       end
     end
   end

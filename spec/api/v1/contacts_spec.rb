@@ -36,4 +36,26 @@ describe '/api/v1/contacts' do
       end
     end
   end
+
+  describe 'DELETE /:id' do
+    let!(:contact) { create(:contact) }
+
+    context 'when contact can be destroyed' do
+      it 'destroy contact' do
+        expect {
+          delete "/api/v1/contacts/#{contact.id}"
+        }.to change { Contact.count }.by(-1)
+
+        expect(response.status).to eq 200
+      end
+    end
+
+    context 'when contact can not be destroyed' do
+      it 'returns error' do
+        expect_any_instance_of(Contact).to receive(:destroy).and_return(false)
+        delete "/api/v1/contacts/#{contact.id}"
+        expect(response.status).to eq 400
+      end
+    end
+  end
 end

@@ -4,7 +4,7 @@ class @ContactRowView extends Backbone.View
   attributes: { class: 'contact-row' }
 
   events:
-    'click .btn-destroy': 'destroy'
+    'click .destroy-btn': 'destroy'
 
   initialize: (args)->
     @contact = args.contact
@@ -12,9 +12,13 @@ class @ContactRowView extends Backbone.View
   render: ->
     @$el.html(@template(@context()))
 
-  edit: ->
-
   destroy: ->
+    if confirm('Bạn có chắc không?')
+      @contact.destroy
+        success: (response)=>
+          @remove()
+        error: (response)->
+          alert(response.responseJSON.error)
 
   context: ->
     {
