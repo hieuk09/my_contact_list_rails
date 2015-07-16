@@ -8,17 +8,17 @@ class @ContactNewView extends Backbone.View
     'click .back-btn': 'destroy'
 
   initialize: ->
-    @contact = new Contact()
 
   render: ->
     @$el.html(@template())
 
   save: ->
-    @contact.save {
+    @contact = new Contact
       name: @getContent('.name')
       address: @getContent('.address')
       telephone: @getContent('.telephone')
-    },
+
+    @contact.save {},
       error: (model, response)->
         alert(response.responseJSON.error)
       success: (model, response)=>
