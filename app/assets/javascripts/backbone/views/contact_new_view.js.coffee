@@ -1,7 +1,7 @@
 class @ContactNewView extends Backbone.View
   template: JST['backbone/templates/contact_new']
   tagName: 'tr'
-  attributes: { class: 'contact-row' }
+  attributes: { class: 'contact-row new-contact' }
 
   events:
     'click .save-btn': 'save'
@@ -22,6 +22,7 @@ class @ContactNewView extends Backbone.View
       error: (model, response)->
         alert(response.responseJSON.error)
       success: (model, response)=>
+        @clearContent()
         @$el.trigger('contactCreated', model)
 
   destroy: ->
@@ -29,3 +30,7 @@ class @ContactNewView extends Backbone.View
 
   getContent: (field)->
     $(@el).find(field).val()
+
+  clearContent: ->
+    for field in ['.name', '.address', '.telephone']
+      $(@el).find(field).val('')

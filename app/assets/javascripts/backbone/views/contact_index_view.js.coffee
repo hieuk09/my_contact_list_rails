@@ -8,12 +8,12 @@ class @ContactIndexView extends Backbone.View
   render: ->
 
   newContact: ->
-    @newContactView = new ContactNewView()
-    @newContactView.render()
-    $(@el).find('.contact-table').prepend(@newContactView.$el)
+    if !@newContactView
+      @newContactView = new ContactNewView()
+      @newContactView.render()
+      $(@el).find('.contact-table').prepend(@newContactView.$el)
 
   createContact: (event, contact)->
-    @newContactView.remove()
     view = new ContactRowView({contact: contact})
     view.render()
-    $(@el).find('.contact-table').prepend(view.$el)
+    $(@el).find('.contact-table .new-contact').after(view.$el)

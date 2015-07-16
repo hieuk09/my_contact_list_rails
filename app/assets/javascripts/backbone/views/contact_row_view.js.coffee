@@ -4,7 +4,6 @@ class @ContactRowView extends Backbone.View
   attributes: { class: 'contact-row' }
 
   events:
-    'click .btn-edit': 'edit'
     'click .btn-destroy': 'destroy'
 
   initialize: (args)->
@@ -22,4 +21,5 @@ class @ContactRowView extends Backbone.View
       name: @contact.get('name')
       telephone: @contact.get('telephone')
       address: @contact.get('address')
+      id: @contact.get('id')
     }
