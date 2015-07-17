@@ -112,6 +112,8 @@ GEM
     hashie (3.4.2)
     hashie-forbidden_attributes (0.1.1)
       hashie (>= 3.0)
+    heroku-deflater (0.5.3)
+      rack (>= 1.4.5)
     hike (1.2.3)
     html2haml (2.0.0)
       erubis (~> 2.7.0)
@@ -262,6 +264,7 @@ DEPENDENCIES
   haml-rails
   handlebars_assets
   hashie-forbidden_attributes
+  heroku-deflater
   jquery-rails
   kaminari
   oj

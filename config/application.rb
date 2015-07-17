@@ -10,5 +10,6 @@ module MyContactListRails
   class Application < Rails::Application
     config.i18n.default_locale = :vi
     config.autoload_paths += Dir[Rails.root.join('lib')]
+    config.middleware.use Rack::Deflater
   end
 end
